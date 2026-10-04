@@ -48,7 +48,7 @@ Because this extension runs locally as an unpacked developer extension, you can 
 
 1. **Clone or Download the Repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/vinyl-tab-extension.git](https://github.com/YOUR_USERNAME/vinyl-tab-extension.git)
+   git clone (https://github.com/Tarunsingh7007/vinyl-tab-extension)
 
    Open Chrome Extension Settings:
 
