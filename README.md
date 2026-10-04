@@ -39,7 +39,6 @@ Built with **vanilla HTML, CSS, and JavaScript** using **Manifest V3**. Everythi
 <img width="1920" height="1080" alt="screenshot png" src="https://github.com/user-attachments/assets/7e4b774b-f9cc-4f50-8bbe-9a8a2617a6f0" />
 
 
-> *(Place your screenshot or demo GIF in the repository root and name it `screenshot.png`)*
 
 ---
 
