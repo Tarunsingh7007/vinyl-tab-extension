@@ -35,8 +35,8 @@ Built with **vanilla HTML, CSS, and JavaScript** using **Manifest V3**. Everythi
 
 ## 📸 Preview
 
-![Vinyl Tab Preview](screenshot.png)
-<img width="1920" height="1080" alt="screenshot png" src="https://github.com/user-attachments/assets/7e4b774b-f9cc-4f50-8bbe-9a8a2617a6f0" />
+![Vinyl Tab Preview](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7f1b1d57-e986-4f17-8791-92c1e5fdcc50" />
+
 
 
 
