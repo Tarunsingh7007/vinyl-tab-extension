@@ -1,8 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Vinyl Tab",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A dark new tab dashboard with a clock, a vinyl music player and your own background images.",
-  "chrome_url_overrides": { "newtab": "newtab.html" },
-  "permissions": ["unlimitedStorage"]
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://*.pinterest.com/*"
+  ]
 }

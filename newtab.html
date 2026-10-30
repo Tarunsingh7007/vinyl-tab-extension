@@ -4,7 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Tab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap">
 <link rel="stylesheet" href="newtab.css">
+<link rel="stylesheet" href="dock.css">
+<link rel="stylesheet" href="pinterest.css">
+<link rel="stylesheet" href="todo.css">
 </head>
 <body>
 <div class="bg on" id="bgA"></div>
@@ -16,6 +22,14 @@
     <div id="time">00:00</div>
     <div id="date"></div>
   </section>
+
+  <div class="stack">
+  <div class="greet">hii, Tarun!!</div>
+  <nav class="dock" aria-label="Shortcuts">
+    <button class="dk-mode" id="dkMode" type="button"><span class="dk-outer"></span><span class="dk-inner"></span></button>
+    <div class="dk-icons" id="dkIcons"></div>
+    <button class="dk-add" id="dkAdd" type="button" aria-label="Add shortcut"></button>
+  </nav>
 
   <section class="player" id="player">
     <div class="info">
@@ -39,6 +53,7 @@
     </div>
     <ul class="list" id="list" hidden></ul>
   </section>
+  </div>
 </main>
 
 <button id="gear" class="corner" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.7 7.7 0 0 0 0-2l2.1-1.6-2-3.4-2.5 1a7.4 7.4 0 0 0-1.7-1L14.9 3h-4l-.4 3a7.4 7.4 0 0 0-1.7 1l-2.5-1-2 3.4L6.6 11a7.7 7.7 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-1a7.4 7.4 0 0 0 1.7 1l.4 3h4l.4-3a7.4 7.4 0 0 0 1.7-1l2.5 1 2-3.4zM12.9 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></button>
@@ -75,6 +90,56 @@
   <form method="dialog"><button class="btn done">Done</button></form>
 </dialog>
 
+<div class="rside">
+  <div class="rcol">
+    <section class="todo" id="todo">
+      <button class="td-head" type="button" aria-expanded="false"><span class="td-title">To do list</span><span class="td-badge"></span><span class="td-chev"></span></button>
+      <div class="td-body"><div class="td-inner"><ul class="td-list"></ul></div></div>
+    </section>
+    <div class="pin-slot" data-pin="vt.pin2" data-cls="pin-b"></div>
+  </div>
+  <div class="pin-slot" data-pin="vt.pin" data-cls="pin-a"></div>
+</div>
+
+<template id="pinTpl">
+  <aside class="pin empty" aria-label="Pinterest board">
+    <div class="pn-frame">
+      <div class="pn-img on"></div><div class="pn-img"></div>
+      <a class="pn-link" aria-label="Open pin on Pinterest"></a>
+      <div class="pn-msg on"></div>
+      <div class="pn-bar">
+        <select class="pn-board" aria-label="Board"></select>
+        <button class="pn-ref" type="button" aria-label="Refresh: fetch the board again and show the next pin" hidden></button>
+        <button class="pn-add" type="button" aria-label="Add board"></button>
+        <button class="pn-del" type="button" aria-label="Remove this board" hidden></button>
+      </div>
+    </div>
+  </aside>
+  <div class="dk-overlay pn-overlay">
+    <form class="dk-card pn-form">
+      <h3>Add a Pinterest board</h3>
+      <label>Board link<input class="pn-url" type="text" placeholder="pinterest.com/username/board-name" required autocomplete="off"></label>
+      <p class="pn-err"></p>
+      <p class="pn-hint">The board must be public. The widget shows one pin from it and switches to the next every hour.</p>
+      <div class="dk-actions"><button class="dk-btn ghost pn-cancel" type="button">Cancel</button><button class="dk-btn solid pn-save" type="submit">Add board</button></div>
+    </form>
+  </div>
+</template>
+
+<div class="dk-tip" id="dkTip"></div>
+<div class="dk-menu" id="dkMenu"><button id="dkEdit" type="button">Update link</button><button id="dkRemove" class="danger" type="button">Remove</button></div>
+<div class="dk-overlay" id="dkOverlay">
+  <form class="dk-card" id="dkForm">
+    <h3 id="dkTitle">Add shortcut</h3>
+    <label>Name<input id="dkName" type="text" placeholder="e.g. GitHub" required autocomplete="off"></label>
+    <label>Website<input id="dkUrl" type="text" placeholder="github.com" required autocomplete="off"></label>
+    <div class="dk-actions"><button class="dk-btn ghost" id="dkCancel" type="button">Cancel</button><button class="dk-btn solid" type="submit">Save</button></div>
+  </form>
+</div>
+
 <script src="newtab.js"></script>
+<script src="dock.js"></script>
+<script src="pinterest.js"></script>
+<script src="todo.js"></script>
 </body>
 </html>
